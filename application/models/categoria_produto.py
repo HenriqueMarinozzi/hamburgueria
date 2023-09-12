@@ -9,5 +9,4 @@ class CategoriaProduto(Base):
     id: Mapped[int] = mapped_column(Integer(), primary_key=True, autoincrement=True)
     nome: Mapped[str] = mapped_column(VARCHAR(50), nullable=False)
     descricao: Mapped[str] = mapped_column(VARCHAR(200), nullable=False)
-    
-    # produtos: Mapped[relationship] = mapped_column(relationship('Produto'))
+

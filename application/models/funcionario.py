@@ -16,7 +16,7 @@ class Funcionario(Base):
     nome: Mapped[str] = mapped_column("nome", VARCHAR(100), nullable=False)
     cpf: Mapped[str] = mapped_column("cpf", CHAR(11), nullable=False)
     rg: Mapped[str] = mapped_column("rg", VARCHAR(11), nullable=False)
-    # id_funcao: Mapped[int] = mapped_column(
+    #       id_funcao: Mapped[int] = mapped_column(
     #     "id_funcao", INTEGER, ForeignKey('funcao_funcionario.id'))
-    # funcao: Mapped[relationship(
+    #       funcao: Mapped[relationship(
     #     "FuncaoFuncionario", back_populates="funcionarios")]
