@@ -1,13 +1,12 @@
-from sqlalchemy_utils import create_database
+from sqlalchemy_utils import create_database, database_exists
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from urllib.parse import quote
 
-instance: str = f"mysql+pymysql://test:{quote('test')}@localhost:3306/hamburgueria"
+instance: str = f"mysql+pymysql://testuser:{quote('testpassword')}@localhost:3306/hamburgueria"
 
 if not database_exists(instance):
     create_database(instance)
 
-engine = create_engine(instance)
-session = Session(engine)
-
+engine = create_engine(instance, echo=True)
+session = Session(bind=engine, autocommit=False, autoflush=True)
